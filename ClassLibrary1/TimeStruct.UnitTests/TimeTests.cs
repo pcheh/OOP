@@ -166,5 +166,13 @@ namespace TimeStruct.UnitTests
 
             Assert.That(k * time, Is.EqualTo(result));
         }
+
+        [TestCase(-5)]
+        public void Multiplication_NegativeMultiplier_ArgumentException(double k)
+        {
+            var time = new Time(1, 1, 1);
+
+            Assert.That(() => k * time, Throws.ArgumentException);
+        }
     }
 }

@@ -86,14 +86,19 @@ namespace TimeStruct
 
         public static Time operator -(Time x, Time y)
         {
-            if (x >= y)
-                return GetTimeByDurationInSeconds(x.DurationInSeconds - y.DurationInSeconds);
+            if (x < y)
+                throw new ArgumentException("Уменьшаемое не должно быть меньше вычитаемого");
                 
-            throw new ArgumentException("Вычитаемое должно быть меньше уменьшаемого");
+            return GetTimeByDurationInSeconds(x.DurationInSeconds - y.DurationInSeconds);
         }
 
-        public static Time operator *(double k, Time time) =>
-            GetTimeByDurationInSeconds((int)Math.Round(k * time.DurationInSeconds));
+        public static Time operator *(double k, Time time)
+        {
+            if (k < 0)
+                throw new ArgumentException("Множитель не должен быть отрицательным");
+
+            return GetTimeByDurationInSeconds((int)Math.Round(k * time.DurationInSeconds));
+        }
 
         public static Time operator *(Time time, double k) => k * time;
 
