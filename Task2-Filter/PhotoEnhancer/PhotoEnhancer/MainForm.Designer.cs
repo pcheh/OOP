@@ -39,7 +39,7 @@
             // orginalPictureBox
             // 
             this.orginalPictureBox.Location = new System.Drawing.Point(278, 10);
-            this.orginalPictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.orginalPictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.orginalPictureBox.Name = "orginalPictureBox";
             this.orginalPictureBox.Size = new System.Drawing.Size(300, 244);
             this.orginalPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -49,7 +49,7 @@
             // resultPictureBox
             // 
             this.resultPictureBox.Location = new System.Drawing.Point(278, 270);
-            this.resultPictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.resultPictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.resultPictureBox.Name = "resultPictureBox";
             this.resultPictureBox.Size = new System.Drawing.Size(300, 244);
             this.resultPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -62,7 +62,7 @@
             this.filtersComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.filtersComboBox.FormattingEnabled = true;
             this.filtersComboBox.Location = new System.Drawing.Point(9, 10);
-            this.filtersComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.filtersComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.filtersComboBox.Name = "filtersComboBox";
             this.filtersComboBox.Size = new System.Drawing.Size(256, 24);
             this.filtersComboBox.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             this.applyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.applyButton.Location = new System.Drawing.Point(62, 484);
-            this.applyButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.applyButton.Margin = new System.Windows.Forms.Padding(2);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(130, 29);
             this.applyButton.TabIndex = 3;
@@ -91,7 +91,7 @@
             this.Controls.Add(this.resultPictureBox);
             this.Controls.Add(this.orginalPictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "PhotoEnhancer";

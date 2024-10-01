@@ -22,7 +22,7 @@ namespace PhotoEnhancer
         {
             InitializeComponent();
 
-            var bmp = (Bitmap)Image.FromFile("C:\\Users\\Наташа\\Desktop\\учеба\\2_2 ООП\\примеры\\PhotoEnhancer\\PhotoEnhancer v.01\\cat.jpg");
+            var bmp = (Bitmap)Image.FromFile("cat.jpg");
             orginalPictureBox.Image = bmp;
             originalPhoto = Convertors.BitmapToPhoto(bmp);
         }
