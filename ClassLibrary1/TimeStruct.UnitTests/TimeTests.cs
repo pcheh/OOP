@@ -132,6 +132,29 @@ namespace TimeStruct.UnitTests
             Assert.That(time1 + time2, Is.EqualTo(result));
         }
 
+        [TestCase(30, 10, 15, 10, 55, 15, 19, 15, 0)]
+        [TestCase(30, 10, 15, 0, 0, 0, 30, 10, 15)]
+        public void SubtractionTest(
+            int hours1, int minutes1, int seconds1,
+            int hours2, int minutes2, int seconds2,
+            int resultHours, int resultMinutes, int resultSeconds)
+        {
+            var time1 = new Time(hours1, minutes1, seconds1);
+            var time2 = new Time(hours2, minutes2, seconds2);
+            var result = new Time(resultHours, resultMinutes, resultSeconds);
+
+            Assert.That(time1 - time2, Is.EqualTo(result));
+        }
+
+        [TestCase(5, 7)]
+        public void Subtraction_SubtrahendLargerThanMinuend_ArgumentException(int hours1, int hours2)
+        {
+            var time1 = new Time(hours1, 0, 0);
+            var time2 = new Time(hours2, 0, 0);
+
+            Assert.That(() => time1 - time2, Throws.ArgumentException);
+        }
+
         [TestCase(5, 11, 33, 45, 57, 48, 45)]
         [TestCase(0.5, 11, 33, 45, 5, 46, 52)]
         public void MultiplicationTest(double k,

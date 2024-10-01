@@ -86,8 +86,8 @@ namespace TimeStruct
 
         public static Time operator -(Time x, Time y)
         {
-            if (x > y)
-                return GetTimeByDurationInSeconds(x.DurationInSeconds + y.DurationInSeconds);
+            if (x >= y)
+                return GetTimeByDurationInSeconds(x.DurationInSeconds - y.DurationInSeconds);
                 
             throw new ArgumentException("Вычитаемое должно быть меньше уменьшаемого");
         }
