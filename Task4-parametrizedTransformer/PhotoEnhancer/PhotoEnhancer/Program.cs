@@ -33,6 +33,17 @@ namespace PhotoEnhancer
                     return new Pixel(lightness, lightness, lightness);
                 }));
 
+            mainForm.AddFilter(new PixelFilter<ContrastParameters>(
+                "Контраст",
+                (pixel, parameters) =>
+                {
+                    return new Pixel(
+                        parameters.AdjustContrast(pixel.R),
+                        parameters.AdjustContrast(pixel.G),
+                        parameters.AdjustContrast(pixel.B));
+                }
+                ));
+
             mainForm.AddFilter(new TransformFilter(
                 "Отражение по горизонтали",
                 size => size,
@@ -45,9 +56,42 @@ namespace PhotoEnhancer
                 (point, size) => new Point(size.Width - point.Y - 1, point.X)
                 ));
 
+            mainForm.AddFilter(new TransformFilter(
+                "Устранение чересстрочной развёртки (замена нечётных строк)",
+                size =>
+                {
+                    if (size.Height % 2 == 0)
+                        return size;
+                    else
+                        return new Size(size.Width, size.Height - 1);
+                },
+
+                (point, size) =>
+                {
+
+                    if (point.Y % 2 != 0)
+                        return point;
+
+                    else
+                    {
+                        int nextY = point.Y + 1;
+
+                        if (nextY >= size.Height)
+                            nextY = size.Height - 1;
+
+                        return new Point(point.X, nextY);
+                    }
+                }
+                ));
+
             mainForm.AddFilter(new TransformFilter<RotationParameters>(
                 "Поворот на произвольный угол",
                 new RotateTransformer()
+                ));
+
+            mainForm.AddFilter(new TransformFilter<LeanParameters>(
+                "Скос вверх",
+                new LeanTransformer()
                 ));
 
             Application.Run(mainForm);
