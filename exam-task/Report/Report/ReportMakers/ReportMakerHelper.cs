@@ -26,7 +26,7 @@ namespace Report
 		public static string MedianHtmlReport(IEnumerable<Measurement> measurements)
 		{
             return MakeReport(measurements, new MedianCalculator(), new HtmlReportMaker());
-        }
+		}
 
 
         public static string MakeReport(
